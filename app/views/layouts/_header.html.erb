@@ -11,12 +11,11 @@
       <!-- <%= link_to image_tag("twitter.png", alt: "twitter logo",
                                             id: "twitter_logo"),'#' %><br>
       <%= link_to "TweeterVer2.0", '#', id: "logo" %> -->
-      <%= link_to image_tag('twitter.png', alt: 'twitter_logo', id: 'logo'), "#"  %>
+      <%= link_to image_tag('twitter.png', alt: 'twitter_logo', id: 'logo'), root_path  %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Help",   '#' %></li>
+        <li><%= link_to "Help",   help_path %></li>
         <li><%= link_to "Log in", '#' %></li>
       </ul>
     </div><!--/.nav-collapse -->
