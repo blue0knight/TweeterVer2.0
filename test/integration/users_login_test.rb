@@ -9,7 +9,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   test "login with invalid information" do
     get login_path
     assert_template 'sessions/new'
-    post login_path, params: { session: { email: "", password: "" } }
+    post login_path, session: { email: "", password: "" } 
     assert_template 'sessions/new'
     assert_not flash.empty?
     get root_path
@@ -18,7 +18,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
   test "login with valid information followed by logout" do
     get login_path
-    post login_path, params: { session: { email: "@user.email", password: 'password' } }
+    post login_path, session: { email: @user.email, password: 'password' }
 
     assert is_logged_in?
     assert_redirected_to @user
@@ -40,7 +40,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
   test "login with remembering" do
     log_in_as(@user, remember_me: '1')
-    assert_equal FILL_IN, assigns(:user).FILL_IN
+    assert_not_nil cookies['remember_token']
   end
 
   test "login without remembering" do
