@@ -34,6 +34,13 @@ img {
   height: 50px;
 }
 
+.gravatar_edit {
+  img {
+    height: 150px;
+  }
+  text-align: center;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -69,6 +76,10 @@ p {
 
 #gravatar_username {
   margin-bottom: 0;
+}
+
+.btn-primary {
+  margin-bottom: 15px;
 }
 
 footer {
